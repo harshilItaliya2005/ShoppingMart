@@ -1,9 +1,6 @@
 package com.example.shoppingcart.ui.fragment.screen
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +17,7 @@ import com.example.shoppingcart.ui.adapter.MensAdapter
 import com.example.shoppingcart.ui.adapter.WomenAdapter
 import com.example.shoppingcart.ui.viewmodel.CategoryViewModel
 import com.example.shoppingcart.ui.viewmodel.CategoryViewModelFactory
+import kotlinx.coroutines.launch
 
 
 class CategoryFragment : Fragment() {
@@ -28,12 +26,12 @@ class CategoryFragment : Fragment() {
     private lateinit var womenAdapter: WomenAdapter
     private lateinit var jewelleryAdapter: JewelleryAdapter
     private lateinit var electronicsAdapter: ElectronicsAdapter
-    private val handler = Handler(Looper.getMainLooper())
 
     private val repo = ShopRepository()
     private val viewModel: CategoryViewModel by viewModels {
         CategoryViewModelFactory(repo)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -42,36 +40,30 @@ class CategoryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        handler.postDelayed({
-            if (binding.progressBar2.isVisible) {
-                binding.progressBar2.visibility = View.GONE
-                Log.d("HomeFragment", "Timeout reached: No products loaded.")
-            }
-        }, 2000)
+    ): View {
         binding = FragmentCategoryBinding.inflate(inflater, container, false)
 
+        binding.progressBar2.visibility = View.VISIBLE
+
         mensAdapter = MensAdapter(emptyList())
-        binding.mensRc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+        binding.mensRc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.mensRc.adapter = mensAdapter
 
         womenAdapter = WomenAdapter(emptyList())
-        binding.womenRc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+        binding.womenRc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.womenRc.adapter = womenAdapter
 
         jewelleryAdapter = JewelleryAdapter(emptyList())
-        binding.jewelleryRc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+        binding.jewelleryRc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.jewelleryRc.adapter = jewelleryAdapter
 
         electronicsAdapter = ElectronicsAdapter(emptyList())
-        binding.electronicsRc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+        binding.electronicsRc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.electronicsRc.adapter = electronicsAdapter
 
-        binding.progressBar2.visibility = View.VISIBLE
         viewModel.fetchProducts()
 
-
-        lifecycleScope.launchWhenStarted {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.products.collect { productList ->
                 val menProducts = productList.filter { it.category.equals("men's clothing", true) }
                 val womenProducts = productList.filter { it.category.equals("women's clothing", true) }
@@ -83,13 +75,31 @@ class CategoryFragment : Fragment() {
                 jewelleryAdapter.updateData(jewelleryProducts)
                 electronicsAdapter.updateData(electronicsProducts)
 
-                binding.progressBar2.visibility = View.GONE
+                binding.mensCategory.isVisible = menProducts.isNotEmpty()
+                binding.womenCategory.isVisible = womenProducts.isNotEmpty()
+                binding.jewelleryCategory.isVisible = jewelleryProducts.isNotEmpty()
+                binding.electronicsCategory.isVisible = electronicsProducts.isNotEmpty()
             }
         }
 
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.categories.collect { categoryList ->
+                binding.mensCategory.text =
+                    categoryList.find { it.equals("men's clothing", true) } ?: "Men's Clothing"
+                binding.womenCategory.text =
+                    categoryList.find { it.equals("women's clothing", true) } ?: "Women's Clothing"
+                binding.jewelleryCategory.text =
+                    categoryList.find { it.equals("jewelery", true) } ?: "Jewellery"
+                binding.electronicsCategory.text =
+                    categoryList.find { it.equals("electronics", true) } ?: "Electronics"
+            }
+        }
 
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.isLoading.collect { loading ->
+                binding.progressBar2.isVisible = loading
+            }
+        }
         return binding.root
     }
-
-
 }

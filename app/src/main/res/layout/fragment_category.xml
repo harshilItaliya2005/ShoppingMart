@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     tools:context=".ui.fragment.screen.CategoryFragment">
 
     <LinearLayout
@@ -15,10 +14,11 @@
 
         <TextView
             android:id="@+id/mensCategory"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextFormat"
-            android:text="@string/mens_category" />
+            android:text="@string/mens_category"
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mensRc"
@@ -29,11 +29,12 @@
 
         <TextView
             android:id="@+id/womenCategory"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextFormat"
+            android:layout_marginTop="16dp"
             android:text="@string/women_category"
-            android:layout_marginTop="16dp" />
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/womenRc"
@@ -44,11 +45,12 @@
 
         <TextView
             android:id="@+id/jewelleryCategory"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextFormat"
+            android:layout_marginTop="16dp"
             android:text="@string/jewellery"
-            android:layout_marginTop="16dp" />
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/jewelleryRc"
@@ -59,11 +61,12 @@
 
         <TextView
             android:id="@+id/electronicsCategory"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextFormat"
+            android:layout_marginTop="16dp"
             android:text="@string/electronics"
-            android:layout_marginTop="16dp" />
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/electronicsRc"

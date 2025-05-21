@@ -14,6 +14,9 @@ class CategoryViewModel(private val repository: ShopRepository): ViewModel() {
     private val _products = MutableStateFlow<List<ProductData>>(emptyList())
     val products: StateFlow<List<ProductData>> =_products
 
+    private val _categories = MutableStateFlow<List<String>>(emptyList())
+    val categories: StateFlow<List<String>> = _categories
+
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading
 
@@ -30,6 +33,10 @@ class CategoryViewModel(private val repository: ShopRepository): ViewModel() {
                 if (productList != null) {
                     _products.value = productList
                     Log.d("ShopViewModel", "Products fetched: $productList")
+                    val distinctCategories = productList
+                        .map { it.category.trim() }
+                        .distinctBy { it.lowercase() }
+                    _categories.value = distinctCategories
                 } else {
                     _errorMessage.value = "No products found"
                     Log.e("ShopViewModel", "No products found")
