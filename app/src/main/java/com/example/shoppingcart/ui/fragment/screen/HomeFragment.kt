@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.shoppingcart.ui.fragment.screen
 
 import BannerAdapter
@@ -28,6 +30,7 @@ import com.example.shoppingcart.ui.viewmodel.ShopScreenViewModel
 import com.example.shoppingcart.ui.viewmodel.ShopScreenViewModelFactory
 
 
+@Suppress("DEPRECATION")
 class HomeFragment : Fragment() {
     private lateinit var navController: NavController
     private lateinit var binding: FragmentHomeBinding
@@ -99,6 +102,7 @@ class HomeFragment : Fragment() {
         binding.progressBar.visibility = View.VISIBLE
         viewModel.fetchProductCategoriesUriAndName()
 
+        @Suppress("DEPRECATION")
         lifecycleScope.launchWhenStarted {
             viewModel.products.collect { productList ->
                 if (productList.isNotEmpty()) {
