@@ -44,7 +44,7 @@ class WomenAdapter( private var products: List<ProductData>): RecyclerView.Adapt
                 R.anim.bounce_in_left
             )
 
-            val animation = AnimationUtils.loadAnimation(holder.itemView.context, anims.random())
+            val animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.slide_in_right)
             holder.itemView.startAnimation(animation)
         }
 
@@ -54,10 +54,9 @@ class WomenAdapter( private var products: List<ProductData>): RecyclerView.Adapt
     override fun getItemCount(): Int {
         return products.size
     }
-
     @SuppressLint("NotifyDataSetChanged")
     fun updateData(newProducts: List<ProductData>) {
-        products = newProducts.filter { it.category == "women's clothing" }
+        products = newProducts
         notifyDataSetChanged()
     }
 

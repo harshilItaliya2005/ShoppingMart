@@ -44,7 +44,7 @@ class ElectronicsAdapter( private var products: List<ProductData>): RecyclerView
                 R.anim.bounce_in_left
             )
 
-            val animation = AnimationUtils.loadAnimation(holder.itemView.context, anims.random())
+            val animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.slide_in_right)
             holder.itemView.startAnimation(animation)
         }
     }
@@ -56,7 +56,7 @@ class ElectronicsAdapter( private var products: List<ProductData>): RecyclerView
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateData(newProducts: List<ProductData>) {
-        products = newProducts.filter { it.category == "electronics" }
+        products = newProducts
         notifyDataSetChanged()
     }
 

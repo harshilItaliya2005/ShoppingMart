@@ -101,7 +101,7 @@ class HomeFragment : Fragment() {
         binding.rcProduct.layoutManager = layoutManager
         binding.rcProduct.itemAnimator = DefaultItemAnimator()
         binding.rcProduct.adapter = productAdapter
-        viewModel.fetchProductCategoriesUriAndName()
+
         binding.progressBar.visibility = View.VISIBLE
         viewModel.fetchProductCategoriesUriAndName()
 

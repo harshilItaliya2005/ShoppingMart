@@ -38,13 +38,8 @@ class MensAdapter( private var products: List<ProductData>): RecyclerView.Adapte
                 mainPrice.paintFlags = mainPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                 rating.text = "${productData.rating.rate}"
             }
-            val anims = listOf(
-                R.anim.slide_in_right,
-                R.anim.fade_in_scale,
-                R.anim.bounce_in_left
-            )
 
-            val animation = AnimationUtils.loadAnimation(holder.itemView.context, anims.random())
+            val animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.slide_in_right)
             holder.itemView.startAnimation(animation)
         }
 
@@ -56,7 +51,7 @@ class MensAdapter( private var products: List<ProductData>): RecyclerView.Adapte
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateData(newProducts: List<ProductData>) {
-        products = newProducts.filter { it.category == "men's clothing" }
+        products = newProducts
         notifyDataSetChanged()
     }
 
