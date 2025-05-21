@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#6200EE</color>
+    <color name="onPrimary">#FFFFFF</color>
+
+    <color name="secondary">#03DAC6</color>
+    <color name="onSecondary">#000000</color>
+
+    <color name="background">#FFFFFF</color>
+    <color name="onBackground">#000000</color>
+
+    <color name="surface">#FFFFFF</color>
+    <color name="onSurface">#000000</color>
+
+    <color name="error">#B00020</color>
+    <color name="onError">#FFFFFF</color>
+
+    <color name="buttonColor">#004CFF</color>
+    <color name="topbarColor">#004CFF</color>
+    <color name="dotColor">#C7D6FB</color>
+    <color name="Gray20">#D2D2D2</color>
+    <color name="Gray">#808080</color>
+    <color name="shimmerColor">#C2C2C2</color>
+
+    <color name="neon_glow">#AA0073FF</color>
+    <color name="neon_body">#0068FF</color>
+</resources>
+
+

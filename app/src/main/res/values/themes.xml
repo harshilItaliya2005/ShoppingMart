@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Base.Theme.ShoppingCart" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="statusBarBackground">@color/topbarColor</item>
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+
+        <!-- Secondary color -->
+        <item name="colorSecondary">@color/onBackground</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+
+        <!-- Background -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="background">@color/background</item>
+        <item name="colorOnBackground">@color/onBackground</item>
+
+        <!-- Surface -->
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+
+        <!-- Error colors -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/onError</item>
+
+        <item name="android:textColor">@color/onBackground</item>
+        <item name="android:textColorHint">@color/Gray</item>
+
+
+
+
+    </style>
+
+    <!-- App Theme (used in Manifest) -->
+    <style name="Theme.ShoppingCart" parent="Base.Theme.ShoppingCart" />
+</resources>

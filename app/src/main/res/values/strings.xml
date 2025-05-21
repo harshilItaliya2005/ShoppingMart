@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">ShoppingCart</string>
+    <string name="shopping_mart">Shopping Mart</string>
+    <string name="note">Beautiful eCommerce UI Kit\nfor your online store</string>
+    <string name="let_s_get_started">Let\'s get started</string>
+    <string name="i_already_have_an_account">I already have an account</string>
+    <string name="create_account">Create \nAccount</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="username">UserName</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="register">Register</string>
+    <string name="good_to_see_you_back">Good to see you back! 🖤</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="men_s_collection">Men\'s Collection</string>
+    <string name="smart_casual_looks"><![CDATA[Smart & Casual Looks]]></string>
+    <string name="from_shirts_to_shoes_upgrade_your_wardrobe_with_bold_modern_fits">From shirts to shoes — upgrade your wardrobe with bold, modern fits.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="women_s_fashion">Women\'s Fashion</string>
+    <string name="elegant_stylish_you">Elegant. Stylish. You.</string>
+    <string name="discover_dresses_tops_and_more_curated_for_everyday_glam">Discover dresses, tops, and more curated for everyday glam.</string>
+    <string name="swap_now">Swap Now</string>
+    <string name="let_s_start">Let\'s Start</string>
+    <string name="shop">Shop</string>
+    <string name="categories">Categories</string>
+    <string name="category">Category</string>
+    <string name="electronics">Electronics</string>
+    <string name="latest_amp_trendy"><![CDATA[Latest & Trendy]]></string>
+    <string name="discover_the_newest_gadgets_must_have_electronics_and_tech_essentials_for_everyday_convenience_and_entertainment">Discover the newest gadgets, must-have electronics, and tech essentials for everyday convenience and entertainment.</string>
+    <string name="radiant_treasures">Radiant Treasures</string>
+    <string name="crafted_for_grace_worn_with_love">Crafted for Grace, Worn with Love</string>
+    <string name="discover_timeless_pieces_that_shimmer_with_elegance_from_everyday_charm_to_exquisite_heirlooms_our_jewelry_is_made_to_be_adored">Discover timeless pieces that shimmer with elegance. From everyday charm to exquisite heirlooms, our jewelry is made to be adored.</string>
+    <string name="top_sale">Top Sale</string>
+    <string name="product_name">Product Name</string>
+    <string name="description">Description</string>
+    <string name="rupee">₹</string>
+    <string name="product_price">Product Price</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+    <string name="cart">Cart</string>
+    <string name="rating">Rating</string>
+    <string name="main_price">Main Price</string>
+
+</resources>

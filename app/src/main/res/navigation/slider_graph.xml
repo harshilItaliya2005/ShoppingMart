@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/sliderOneFragment">
+
+    <fragment
+        android:id="@+id/sliderOneFragment"
+        android:name="com.example.shoppingcart.ui.fragment.slider.SliderOneFragment"
+        android:label="fragment_slider_one"
+        tools:layout="@layout/fragment_slider_one" >
+        <action
+            android:id="@+id/action_sliderOneFragment_to_sliderTwoFragment"
+            app:destination="@id/sliderTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sliderTwoFragment"
+        android:name="com.example.shoppingcart.ui.fragment.slider.SliderTwoFragment"
+        android:label="fragment_slider_two"
+        tools:layout="@layout/fragment_slider_two" >
+        <action
+            android:id="@+id/action_sliderTwoFragment_to_sliderThreeFragment"
+            app:destination="@id/sliderThreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sliderThreeFragment"
+        android:name="com.example.shoppingcart.ui.fragment.slider.SliderThreeFragment"
+        android:label="fragment_slider_three"
+        tools:layout="@layout/fragment_slider_three" >
+        <action
+            android:id="@+id/action_sliderThreeFragment_to_slidetFourFragment"
+            app:destination="@id/slidetFourFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/slidetFourFragment"
+        android:name="com.example.shoppingcart.ui.fragment.slider.SliderFourFragment"
+        android:label="fragment_slidet_four"
+        tools:layout="@layout/fragment_slider_four" />
+</navigation>
