@@ -13,6 +13,21 @@
         <action
             android:id="@+id/action_homeFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_topSaleFragment"
+            app:destination="@id/topSaleFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mensFragment"
+            app:destination="@id/mensFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_electronicsFragment"
+            app:destination="@id/electronicsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_jewelleryFragment"
+            app:destination="@id/jewelleryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_womenFragment"
+            app:destination="@id/womenFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -29,4 +44,29 @@
         android:name="com.example.shoppingcart.ui.fragment.screen.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/topSaleFragment"
+        android:name="com.example.shoppingcart.ui.fragment.categoryscreen.TopSaleFragment"
+        android:label="fragment_top_sale"
+        tools:layout="@layout/fragment_top_sale" />
+    <fragment
+        android:id="@+id/mensFragment"
+        android:name="com.example.shoppingcart.ui.fragment.categoryscreen.MensFragment"
+        android:label="fragment_mens"
+        tools:layout="@layout/fragment_mens" />
+    <fragment
+        android:id="@+id/electronicsFragment"
+        android:name="com.example.shoppingcart.ui.fragment.categoryscreen.ElectronicsFragment"
+        android:label="fragment_electronics"
+        tools:layout="@layout/fragment_electronics" />
+    <fragment
+        android:id="@+id/jewelleryFragment"
+        android:name="com.example.shoppingcart.ui.fragment.categoryscreen.JewelleryFragment"
+        android:label="fragment_jewellery"
+        tools:layout="@layout/fragment_jewellery" />
+    <fragment
+        android:id="@+id/womenFragment"
+        android:name="com.example.shoppingcart.ui.fragment.categoryscreen.WomenFragment"
+        android:label="fragment_women"
+        tools:layout="@layout/fragment_women" />
 </navigation>

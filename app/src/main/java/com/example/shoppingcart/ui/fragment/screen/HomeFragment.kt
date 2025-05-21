@@ -61,6 +61,8 @@ class HomeFragment : Fragment() {
         ShopScreenViewModelFactory(repository)
     }
     private lateinit var productAdapter: ProductAdapter
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -89,16 +91,17 @@ class HomeFragment : Fragment() {
 
         handler.postDelayed(autoScrollRunnable, 2000)
 
-        adapter = CategoryAdapter(emptyList())
+        adapter = CategoryAdapter(emptyList(), navController)
         binding.rcCategories.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rcCategories.adapter = adapter
+
 
         val layoutManager = GridLayoutManager(context,2)
         productAdapter = ProductAdapter(emptyList())
         binding.rcProduct.layoutManager = layoutManager
         binding.rcProduct.itemAnimator = DefaultItemAnimator()
         binding.rcProduct.adapter = productAdapter
-
+        viewModel.fetchProductCategoriesUriAndName()
         binding.progressBar.visibility = View.VISIBLE
         viewModel.fetchProductCategoriesUriAndName()
 

@@ -42,5 +42,8 @@
     <string name="cart">Cart</string>
     <string name="rating">Rating</string>
     <string name="main_price">Main Price</string>
+    <string name="mens_category">Mens Category</string>
+    <string name="women_category">Women Category</string>
+    <string name="jewellery">Jewellery</string>
 
 </resources>

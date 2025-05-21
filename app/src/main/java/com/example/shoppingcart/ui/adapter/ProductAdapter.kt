@@ -34,8 +34,6 @@ class ProductAdapter(
             mainPrice.text = "${productData.price + 200}"
             mainPrice.paintFlags = mainPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             rating.text = "${productData.rating.rate}"
-
-
         }
 
         holder.itemView.apply {
